@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .image-container {
+            width: 650px;
+            height: 1572px;
+            background-image: url('https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="image-container"></div>
+        <iframe src="https://forms.gle/VxDrnsUpuwRUNkeE8" width="650" height="auto"></iframe>
+    </div>
+</body>
+</html>
+<!--
+<img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650" alt="설명" style="margin-left: auto; margin-right: auto;width: 650px; height: 1572px;" >
+-->
