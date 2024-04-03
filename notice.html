@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>이미지 중앙 배치</title>
     <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* 가로 스크롤 제거 */
-    }
-    .image-container {
-        display: flex;
-        justify-content: center; /* 이미지 중앙 정렬 */
-        align-items: center; /* 이미지 세로 중앙 정렬 */
-        height: 100vh; /* 뷰포트 높이에 맞게 설정 */
-    }
-    .image-container img {
-        width: 100%; /* 이미지 가로 크기 확장 */
-        max-height: 100%; /* 이미지 세로 크기 최대 높이 설정 */
-    }
-</style>
-
+        .image-container {
+            width: 650px; /* 이미지의 가로 크기와 동일 */
+            margin: 0 auto; /* 상하 여백 0, 좌우 자동으로 설정하여 중앙 정렬 */
+        }
+        .image-container img {
+            width: 100%; /* 컨테이너 너비에 맞춰 이미지 크기 조정 */
+            vertical-align: top; /* 이미지 상단 정렬 */
+            display: block; /* 블록 레벨 요소로 설정하여 아래 요소와 붙임 */
+            margin: 0px; /* 여백 제거 */
+            padding: 0px; /* 패딩 제거 */
+        }
+    </style>
 </head>
 <body>
-  <div class="image-container">
-  <img src="https://lh3.googleusercontent.com/BAeEVeNWOXALFjLCNSEA4_9Jd6cDskDTqc0fL5D9NRHfW6q5A_38aP7JB1TQYai08Ak2gyrx05WcNMqLCXx9eq4zKwdv4I_yrD4iO_8wTRS7K-pswx3NFKnqQKNST3PRug=w650">
-  <img src="https://lh6.googleusercontent.com/X2Up0FTTWy9gR9IVGguVojJvMGlxSP4FyVRWtkbL3kgvOTLuWCOsjSx0BDcdgDrKy-5i5LEy4Yik2ty2koynsurncy6Rf1dlHbTIWqEaA98gQJ9jFNROgdjstkhx2gs4Eg=w650">
-  </div>
+
+<div class="image-container">
+   <img src="https://lh3.googleusercontent.com/BAeEVeNWOXALFjLCNSEA4_9Jd6cDskDTqc0fL5D9NRHfW6q5A_38aP7JB1TQYai08Ak2gyrx05WcNMqLCXx9eq4zKwdv4I_yrD4iO_8wTRS7K-pswx3NFKnqQKNST3PRug=w650" />
+  <img src="https://lh6.googleusercontent.com/X2Up0FTTWy9gR9IVGguVojJvMGlxSP4FyVRWtkbL3kgvOTLuWCOsjSx0BDcdgDrKy-5i5LEy4Yik2ty2koynsurncy6Rf1dlHbTIWqEaA98gQJ9jFNROgdjstkhx2gs4Eg=w650" />
+</div>
+
 </body>
-</html> 
+</html>
 <!--
 <img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650" alt="설명" style="margin-left: auto; margin-right: auto;width: 650px; height: 1572px;" >
 -->
