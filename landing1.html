@@ -1,24 +1,133 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            background-color: #ffffff;
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+     .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+     }
+
+    .grid-container img {
+     max-width: 100%;
+     height: auto;
+    }
+	 /* 개인정보 수집 내용을 위한 CSS */
+        .info-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
+ </style>
+ </head>
+ <body>
+<div class="grid-container">
+<img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650" alt="Your Image" width="650">
+    <form id="customerForm" action="YOUR_WEBHOOK_URL" method="post">
+        <label for="name">성함:</label>
+        <input type="text" id="name" name="name" oninput="validateName()" required>
+        <span id="nameError" style="color: red;"></span><br><br>
+
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" oninput="validateEmail()" required>
+        <span id="emailError" style="color: red;"></span><br><br>
+
+        <label for="phone">전화번호:</label>
+        <input type="tel" id="phone" name="phone" oninput="validatePhoneNumber()" required>
+        <span id="phoneError" style="color: red;"></span><br><br>
+		<input type="radio" id="agree" name="agreement" required>
+        <label for="agree">개인정보 수집 동의</label>
+        <button type="button" onclick="showAgreementDetails()">개인정보 수집 동의 내용보기</button><br><br>
+        <input type="submit" value="제출">
+    </form>
+     <div id="agreementDetails" style="display: none;">
+        <!-- 여기에 개인정보 수집 동의 내용을 작성하세요 -->
+       <div class="info-container">
+        <h2>개인정보 수집</h2>
+        <p><strong>'홍인수'</strong>은(는) 회원가입, 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.</p>
+        <ul>
+            <li>필수항목: 이름, 휴대전화, 이메일, 주소</li>
+        </ul>
+        <p><strong>'힘비즈'</strong>은(는) 수집한 개인정보를 다음의 목적을 위해 활용합니다:</p>
+        <ol>
+            <li>서비스 이용에 따른 본인식별, 실명확인, 가입의사 확인</li>
+            <li>고지사항 전달, 의사소통 경로 확보, 이벤트 당첨 물품 배송 시 정확한 배송지 정보 확보</li>
+            <li>신규 서비스 등 최신정보 개인 맞춤 서비스 제공을 위한 자료</li>
+            <li>불량회원 부정 이용 방지 및 비인가 사용 방지</li>
+        </ol>
+        <p>원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.</p>
+        <!-- 이하 생략 -->
+      </div>
+    </div>
+
+    <script>
+        function validateName() {
+            const nameInput = document.getElementById("name");
+            const nameError = document.getElementById("nameError");
+            const regex = /^[가-힣]+$/;
+
+            if (!regex.test(nameInput.value)) {
+                nameError.textContent = "한글 이름만 입력 가능합니다.";
+            } else {
+                nameError.textContent = "";
+            }
         }
-    </style>
-</head>
-<body>
-   <img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650">
-</body>
+
+        function validateEmail() {
+            const emailInput = document.getElementById("email");
+            const emailError = document.getElementById("emailError");
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (!regex.test(emailInput.value)) {
+                emailError.textContent = "올바른 이메일 주소를 입력해 주세요.";
+            } else {
+                emailError.textContent = "";
+            }
+        }
+
+        function validatePhoneNumber() {
+            const phoneInput = document.getElementById("phone");
+            const phoneError = document.getElementById("phoneError");
+            const regex = /^010-\d{4}-\d{4}$/; // 정규식: 010-1234-5678 형식
+
+            if (!regex.test(phoneInput.value)) {
+                phoneError.textContent = "올바른 전화번호 형식을 입력하세요 (010-1234-5678).";
+            } else {
+                phoneError.textContent = "";
+            }
+        }
+
+        function showAgreementDetails() {
+            const agreementDetails = document.getElementById("agreementDetails");
+            agreementDetails.style.display = "block";
+        }
+
+        document.getElementById("customerForm").addEventListener("submit", function (event) {
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const agreementInput = document.getElementById("agree");
+
+            if (!nameInput.value || !emailInput.value || !agreementInput.checked) {
+                alert("이름, 이메일, 개인정보 수집 동의는 필수 입력 값입니다.");
+                event.preventDefault();
+                if (!nameInput.value) {
+                    nameInput.focus();
+                } else if (!emailInput.value) {
+                    emailInput.focus();
+                } else {
+                    agreementInput.focus();
+                }
+            }
+        });
+    </script>
+</div>
+<br><br><br><br><br><br><br>
+ </body>
 </html>
-<!--
-<img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650" alt="설명" style="margin-left: auto; margin-right: auto;width: 650px; height: 1572px;" >
--->
