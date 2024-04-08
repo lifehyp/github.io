@@ -29,8 +29,8 @@
  </head>
  <body>
 <div class="grid-container">
-<img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650" alt="Your Image" width="650">
-    <form id="customerForm" action="YOUR_WEBHOOK_URL" method="post">
+  <img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650" alt="Your Image" width="650">       
+    <form id="customerForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
         <label for="name">성함:</label>
         <input type="text" id="name" name="name" oninput="validateName()" required>
         <span id="nameError" style="color: red;"></span><br><br>
@@ -42,6 +42,7 @@
         <label for="phone">전화번호:</label>
         <input type="tel" id="phone" name="phone" oninput="validatePhoneNumber()" required>
         <span id="phoneError" style="color: red;"></span><br><br>
+		<input type="hidden" name="funnel_state" value="scr0">
 		<input type="radio" id="agree" name="agreement" required>
         <label for="agree">개인정보 수집 동의</label>
         <button type="button" onclick="showAgreementDetails()">개인정보 수집 동의 내용보기</button><br><br>
@@ -67,66 +68,91 @@
       </div>
     </div>
 
-    <script>
-        function validateName() {
-            const nameInput = document.getElementById("name");
-            const nameError = document.getElementById("nameError");
-            const regex = /^[가-힣]+$/;
+	<script>
+    function validateName() {
+        const nameInput = document.getElementById("name");
+        const nameError = document.getElementById("nameError");
+        const regex = /^[가-힣]+$/;
 
-            if (!regex.test(nameInput.value)) {
-                nameError.textContent = "한글 이름만 입력 가능합니다.";
-            } else {
-                nameError.textContent = "";
-            }
+        if (!regex.test(nameInput.value)) {
+            nameError.textContent = "한글 이름만 입력 가능합니다.";
+            return false;
+        } else {
+            nameError.textContent = "";
+            return true;
         }
+    }
 
-        function validateEmail() {
-            const emailInput = document.getElementById("email");
-            const emailError = document.getElementById("emailError");
-            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    function validateEmail() {
+        const emailInput = document.getElementById("email");
+        const emailError = document.getElementById("emailError");
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-            if (!regex.test(emailInput.value)) {
-                emailError.textContent = "올바른 이메일 주소를 입력해 주세요.";
-            } else {
-                emailError.textContent = "";
-            }
+        if (!regex.test(emailInput.value)) {
+            emailError.textContent = "올바른 이메일 주소를 입력해 주세요.";
+            return false;
+        } else {
+            emailError.textContent = "";
+            return true;
         }
+    }
 
-        function validatePhoneNumber() {
-            const phoneInput = document.getElementById("phone");
-            const phoneError = document.getElementById("phoneError");
-            const regex = /^010-\d{4}-\d{4}$/; // 정규식: 010-1234-5678 형식
+    function validatePhoneNumber() {
+        const phoneInput = document.getElementById("phone");
+        const phoneError = document.getElementById("phoneError");
+        const regex = /^010-\d{4}-\d{4}$/;
 
-            if (!regex.test(phoneInput.value)) {
-                phoneError.textContent = "올바른 전화번호 형식을 입력하세요 (010-1234-5678).";
-            } else {
-                phoneError.textContent = "";
-            }
+        if (!regex.test(phoneInput.value)) {
+            phoneError.textContent = "올바른 전화번호 형식을 입력하세요 (010-1234-5678).";
+            return false;
+        } else {
+            phoneError.textContent = "";
+            return true;
         }
+    }
 
-        function showAgreementDetails() {
+     function showAgreementDetails() {
             const agreementDetails = document.getElementById("agreementDetails");
             agreementDetails.style.display = "block";
         }
 
-        document.getElementById("customerForm").addEventListener("submit", function (event) {
-            const nameInput = document.getElementById("name");
-            const emailInput = document.getElementById("email");
-            const agreementInput = document.getElementById("agree");
+    document.getElementById("customerForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // 폼의 기본 제출 동작을 중단
 
-            if (!nameInput.value || !emailInput.value || !agreementInput.checked) {
-                alert("이름, 이메일, 개인정보 수집 동의는 필수 입력 값입니다.");
-                event.preventDefault();
-                if (!nameInput.value) {
-                    nameInput.focus();
-                } else if (!emailInput.value) {
-                    emailInput.focus();
-                } else {
-                    agreementInput.focus();
-                }
+        // 유효성 검사
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isPhoneValid = validatePhoneNumber();
+        const agreementInput = document.getElementById("agree");
+
+        if (!isNameValid || !isEmailValid || !isPhoneValid || !agreementInput.checked) {
+            alert("모든 필드를 올바르게 입력하고 개인정보 수집에 동의해 주세요.");
+            return;
+        }
+
+        // FormData 객체를 사용하여 폼 데이터를 준비
+        const formData = new FormData(document.getElementById("customerForm"));
+
+        // fetch API를 사용하여 데이터를 웹훅 URL로 비동기적으로 전송
+        fetch("https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw", {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => {
+            if (response.ok) {
+                // notice.html을 새 창으로 열기
+                window.open('https://lifehyp.github.io/github.io/notice.html', '_blank');
+            } else {
+                alert("데이터를 전송하는 데 실패했습니다.");
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("오류가 발생했습니다.");
         });
-    </script>
+    });
+</script>
+
 </div>
 <br><br><br><br><br><br><br>
  </body>
