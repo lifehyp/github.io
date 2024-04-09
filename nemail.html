@@ -35,35 +35,36 @@
   <strong>최면 사주 보는 법</strong>, <strong>테라피 최면법</strong>, <strong>성인용 최면 요법</strong></span> 등을 활용하여 해결책을 제시하고 있습니다.&nbsp;<br />
 <br />
 <strong><span style="color:#000000;"><span style="background-color:#ecf0f1;">이메일 정보 수신동의 &quot;철회&quot;를 원하시는 경우, 이메일을 입력해 주시면 조치하겠습니다.</span></span></strong></p>
-<!--<form id="NemailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
-        <label for="Nemail">이메일:</label>
-        <input type="email" id="Nemail" name="Nemail" oninput="validateEmail()" required>
+<!--<form id="emailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" oninput="validateEmail()" required>
 		<input type="submit" value="보내기" style="margin-left: 200px;">
-        <span id="NemailError" style="color: red;"></span>
+        <span id="emailError" style="color: red;"></span>
 </form> -->
-<form id="NemailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
-  <label for="Nemail">이메일:</label>
+<form id="emailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
+  <label for="email">이메일:</label>
   <div style="display: flex; align-items: center;">
-    <input type="email" id="Nemail" name="Nemail" oninput="validateEmail()" required>
+    <input type="email" id="email" name="email" oninput="validateEmail()" required>
+    <input type="hidden" name="email_Y_N" value="y"> 
     <input type="submit" value="보내기" style="margin-left: 10px;">
   </div>
-  <span id="NemailError" style="color: red;"></span>
+  <span id="emailError" style="color: red;"></span>
 </form>
 
 <p><br />
-앞으로도 많은 성원 바랍니다. 감사합니다.</p>
+늘 건강하시고 행복하시길 기원합니다. 감사합니다.</p>
 
   <script>
     function validateEmail() {
-        const NemailInput = document.getElementById("Nemail");
-        const NemailError = document.getElementById("NemailError");
+        const emailInput = document.getElementById("email");
+        const emailError = document.getElementById("emailError");
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-        if (!regex.test(NemailInput.value)) {
-            NemailError.textContent = "올바른 이메일 주소를 입력해 주세요.";
+        if (!regex.test(emailInput.value)) {
+            emailError.textContent = "올바른 이메일 주소를 입력해 주세요.";
             return false;
         } else {
-            NemailError.textContent = "";
+            emailError.textContent = "";
             return true;
         }
     }
