@@ -25,6 +25,19 @@
             margin-bottom: 20px;
         }
  </style>
+	 <script>
+window.onload = function() {
+    // URL에서 이메일 주소를 추출
+    var params = new URLSearchParams(window.location.search);
+    var email = params.get('email'); // 'email' 쿼리 스트링의 값을 가져옴
+
+    // 이메일 주소가 있다면, input 필드에 설정
+    if(email) {
+        document.querySelector('input[name="email"]').value = email;
+    }
+}
+</script>
+
  </head>
  <body>
 <div class="grid-container">
