@@ -31,7 +31,7 @@
 <div class="grid-container">
   <img src="https://lh5.googleusercontent.com/kWwsMkCnw9Hqh-iSZg0BQQbNTs__Willymmb5nWMfzdDe37Qf_yxOGtXAxrV36GKl_Ibeh-Jd894atLXyfKnLObyq67P6LD_LKEqUlH4VszjXz52Ud_BkMqjdG9re8VLaw=w650" alt="Your Image" width="650">       
     <form id="customerForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
-        <label for="name">성함:</label>
+        <label for="name">성 성 &nbsp;&nbsp;&nbsp;함:함:</label>
         <input type="text" id="name" name="name" oninput="validateName()" required>
         <span id="nameError" style="color: red;"></span><br><br>
 
@@ -46,7 +46,7 @@
 	        <input type="hidden" name="email_Y_N" value="n">
 	        <input type="radio" id="agree" name="agreement" value="예, 동의합니다." required>
         <label for="agree">개인정보 수집 동의</label>
-        <button type="button" onclick="showAgreementDetails()">개인정보 수집 동의 내용보기</button><br><br>
+        <button type="button" onclick="toggleAgreementDetails()">개인정보 수집 동의 내용보기</button><br><br>
         <input type="submit" value="제출">
     </form>
      <div id="agreementDetails" style="display: none;">
