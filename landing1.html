@@ -68,7 +68,60 @@
         <!-- 이하 생략 -->
       </div>
     </div>
+   <!-- 카카오톡 공유 시작 -->
+    <div class="grid-container">
+	   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.1/kakao.min.js"
+  integrity="sha384-kDljxUXHaJ9xAb2AzRd59KxjrFjzHa5TAoFQ6GbYTCAG0bjM55XohjjDT7tDDC01" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('1926ad4b3d88685f5261147edfeb2afa'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
 
+<a id="kakaotalk-sharing-btn" href="javascript:;">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8GtNj6N8XbSzG7tAOSCIbXaMhAGeOOMzwGG3qN4qPcp3L0KmLcsZHDyQZy9PjeluWZ1S4bFkrQ_CZyphroB0ry95KA5iQsgYGt6Mbc9vMVR2X5eHzqRi8N9jxqvTjOTkdMVI_76AP1O2y7p7Okuz9bsM6t2sbNxwfXr7fp80IPn8RlslHTJoxpBJqe2Y/w591-h214/dvdgvg.png"
+    alt="카카오톡 공유 보내기 버튼" />
+</a>
+
+<script>
+  Kakao.Share.createDefaultButton({
+    container: '#kakaotalk-sharing-btn',
+    objectType: 'feed',
+    content: {
+      title: '잠재의식 에너지 체험 최면 스크립트.PDF',
+      description: '#운세 #사주 #타로 #잠재의식 #연애운 #금전운 #직업운 #재회',
+      imageUrl:
+        'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEianQkPonYhbTvPcYUIaTZHImxotiWofedfybpfozE03ZbhlqRl6uluMSVUeI8f8b7i46RmhAnKpyzfjMtM99ZfxESG70X5wJXkR9ReHUzy7U_1fdUhbhln049Nbw2wp4wH8iaptAZKag9hxTeal0hTvpJointYAcCSUIMUWZg0buXumNpquDZrCuJai-A/w502-h502/036.jpg',
+      link: {
+        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+        mobileWebUrl: 'https://developers.kakao.com',
+        webUrl: 'https://developers.kakao.com',
+      },
+    },
+    social: {
+      likeCount: 286,
+      commentCount: 45,
+      sharedCount: 845,
+    },
+    buttons: [
+      {
+        title: '웹으로 보기',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+      {
+        title: '앱으로 보기',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com',
+        },
+      },
+    ],
+  });
+</script>
+	</div>
+<p>&nbsp;</p>
+     <!-- 카카오톡 공유 여기까지 -->
 	<script>
     function validateName() {
         const nameInput = document.getElementById("name");
@@ -112,10 +165,15 @@
         }
     }
 
-     function showAgreementDetails() {
-            const agreementDetails = document.getElementById("agreementDetails");
-            agreementDetails.style.display = "block";
-        }
+     function toggleAgreementDetails() {
+          const agreementDetails = document.getElementById("agreementDetails");
+          agreementDetails.style.display = toggle(agreementDetails.style.display);
+     }
+
+     function toggle(display) {
+     return display === "none" ? "block" : "none";
+     }
+	
 
     document.getElementById("customerForm").addEventListener("submit", function (event) {
         event.preventDefault(); // 폼의 기본 제출 동작을 중단
