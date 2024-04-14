@@ -1,0 +1,94 @@
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+     .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      gap: 1rem;
+     }
+
+    .grid-container img {
+     max-width: 100%;
+     height: auto;
+    }
+	 /* 개인정보 수집 내용을 위한 CSS */
+        .info-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+ </style>	 
+ </head>
+ <body>
+<div class="grid-container">
+  <p>&nbsp;</p>
+<p>안녕하세요?<br />
+힘비즈에서는 자신의 운세와 건강 그리고 부부 로맨스 관계 등에 관한 유용한 정보를 제공하며,<br />
+<span style="color:#c0392b;">
+  <strong>최면 사주 보는 법</strong>, <strong>테라피 최면법</strong>, <strong>성인용 최면 요법</strong></span> 등을 활용하여 해결책을 제시하고 있습니다.&nbsp;<br />
+<br />
+<strong><span style="color:#000000;"><span style="background-color:#ecf0f1;">이메일 정보 수신동의 &quot;철회&quot;를 원하시는 경우, 이메일을 입력해 주시면 조치하겠습니다.</span></span></strong></p>
+<!--<form id="emailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" oninput="validateEmail()" required>
+		<input type="submit" value="보내기" style="margin-left: 200px;">
+        <span id="emailError" style="color: red;"></span>
+</form> -->
+<form id="emailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post" onsubmit="return validateEmails()">
+    <label for="email1">이메일:</label>
+    <input type="email" id="email1" name="email1" required>
+    <label for="email2">이메일 확인:</label>
+    <input type="email" id="email2" name="email2" required>
+    <input type="submit" value="보내기" style="margin-left: 10px;">
+    <span id="emailError" style="color: red;"></span>
+  </form>
+
+<p><br />
+늘 건강하시고 행복하시길 기원합니다. 감사합니다.</p>
+
+  <script>
+    function validateEmails() {
+        const email1 = document.getElementById("email1").value;
+        const email2 = document.getElementById("email2").value;
+        const emailError = document.getElementById("emailError");
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // 이메일 형식 확인
+        if (!regex.test(email1) || !regex.test(email2)) {
+            emailError.textContent = "올바른 이메일 주소를 입력해 주세요.";
+            return false;
+        }
+
+        // 이메일 일치 확인
+		if (email1 !== email2) {
+            emailError.textContent = "두 이메일이 일치하지 않습니다.";
+            return false;
+        }
+
+        emailError.textContent = "";
+        return true; // 모든 검증을 통과했다면 true를 반환하여 폼 제출을 허용
+    }
+	window.onload = function() {
+    var params = new URLSearchParams(window.location.search);
+    var email = params.get('email'); // 'email' 쿼리 스트링의 값을 가져옴
+
+    // 'email1'과 'email2' 입력 필드에 이메일 주소를 설정
+    if(email) {
+        document.getElementById('email1').value = email;
+        document.getElementById('email2').value = email;
+    }
+}
+  </script>
+ 
+  </div>
+<br><br><br><br><br><br><br>
+ </body>
+</html>
+
