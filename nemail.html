@@ -34,32 +34,25 @@
 <span style="color:#c0392b;">
   <strong>최면 사주 보는 법</strong>, <strong>테라피 최면법</strong>, <strong>성인용 최면 요법</strong></span> 등을 활용하여 해결책을 제시하고 있습니다.&nbsp;<br />
 <br />
-<strong><span style="color:#000000;"><span style="background-color:#ecf0f1;">이메일 정보 수신동의 &quot;철회&quot;를 원하시는 경우, 이메일을 입력해 주시면 조치하겠습니다.</span></span></strong></p>
-<!--<form id="emailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
-        <label for="email">이메일:</label>
-        <input type="email" id="email" name="email" oninput="validateEmail()" required>
-	<input type="hidden" name="email_Y_N" value="y">
-		<input type="submit" value="보내기" style="margin-left: 200px;">
-        <span id="emailError" style="color: red;"></span>
-</form> -->
-<form id="emailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post" onsubmit="return validateEmails()">
+<strong><span style="color:#000000;"><span style="background-color:#ecf0f1;">이메일 정보 수신동의 &quot;철회&quot;를 원하시는 경우, 이메일을 입력해 주시면 조치하겠습니다.</span></span></strong></p> 
+<form id="emailForm" action="https://hook.eu2.make.com/oj0hj1otian86xpljljsruhocijtv4kw" method="post">
     <label for="email1">이메일:</label>
     <input type="email" id="email1" name="email1" required>
     <label for="email2">이메일 확인:</label>
     <input type="email" id="email2" name="email2" required>
+    <input type="hidden" id="actualEmail" name="email"> <!-- 실제로 전송될 이메일 주소를 위한 숨겨진 필드 -->
     <input type="hidden" name="email_Y_N" value="y">
     <input type="submit" value="보내기" style="margin-left: 10px;">
     <span id="emailError" style="color: red;"></span>
-  </form>
-
+</form>
 <p><br />
 늘 건강하시고 행복하시길 기원합니다. 감사합니다.</p>
-
-  <script>
-    function validateEmails() {
+<script>
+    document.getElementById("emailForm").onsubmit = function() {
         const email1 = document.getElementById("email1").value;
         const email2 = document.getElementById("email2").value;
         const emailError = document.getElementById("emailError");
+        const actualEmail = document.getElementById("actualEmail"); // 실제로 전송될 이메일 주소를 위한 필드
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         // 이메일 형식 확인
@@ -69,26 +62,18 @@
         }
 
         // 이메일 일치 확인
-		if (email1 !== email2) {
+        if (email1 !== email2) {
             emailError.textContent = "두 이메일이 일치하지 않습니다.";
             return false;
         }
 
+        // 이메일 주소가 일치하면, actualEmail 필드의 값을 설정하고 폼을 제출합니다.
+        actualEmail.value = email1; // 여기서는 email1과 email2가 일치하므로, email1을 사용합니다.
+
         emailError.textContent = "";
         return true; // 모든 검증을 통과했다면 true를 반환하여 폼 제출을 허용
-    }
-	window.onload = function() {
-    var params = new URLSearchParams(window.location.search);
-    var email = params.get('email'); // 'email' 쿼리 스트링의 값을 가져옴
-
-    // 'email1'과 'email2' 입력 필드에 이메일 주소를 설정
-    if(email) {
-        document.getElementById('email1').value = email;
-        document.getElementById('email2').value = email;
-    }
-}
-  </script>
- 
+    };
+</script>
   </div>
 <br><br><br><br><br><br><br>
  </body>
