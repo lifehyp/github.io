@@ -67,16 +67,14 @@
             return false;
         }
 
-        // 이메일 주소가 일치하면, actualEmail 필드의 값을 설정하고 폼을 제출합니다.
-        actualEmail.value = email1; // 여기서는 email1과 email2가 일치하므로, email1을 사용합니다.
+        // 이메일 주소가 일치하면, actualEmail 필드의 값을 설정합니다.
+        actualEmail.value = email1;
 
-	    // 입력된 이메일 값과 email_Y_N 값을 alert로 보여주기
-alert("이메일: " + actualEmail.value + "\n email_Y_N: " + email_Y_N);
-
-//        emailError.textContent = "";
-//        return true; // 모든 검증을 통과했다면 true를 반환하여 폼 제출을 허용
+        emailError.textContent = "";
+        return true; // 모든 검증을 통과했다면 true를 반환하여 폼 제출을 허용
     };
 </script>
+
   </div>
 <br><br><br><br><br><br><br>
  </body>
