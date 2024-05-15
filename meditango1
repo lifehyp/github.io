@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>국내 최초 다이나믹 명상 - 탱고 명상 모집 안내 </title>
+<style>
+    img {
+        width: 860px; /* 모든 이미지에 동일한 가로 길이 적용 */
+        display: block; /* 이미지를 블록 요소로 만들어 줄바꿈 */
+        margin-bottom: 20px; /* 이미지 사이의 간격 */
+    }
+    
+  #div_ntc {
+	margin:10px;
+	text-align:left; 
+	padding-top:10 px; 
+	]
+</style>
+</head>
+<body>
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIYsRCK-u-OLh3-iDe145-lO63LAY07_PHFehY1HixEi32NQSOZKkqAY_kq5T9FROOcdwwl7VJIjCfnZAuuZ4TxhX3wDip4tikbyEQSofLwrGtIIeds55_EjDLBvktg8aMHHKBZuX2qN2Utl2bqcG5NmMdcgZ2rOQQ7Vl3uq7RzSzEfPX-uoPChxk4O38/s16000/014-1.jpg" alt="탱고 명상 공지">
+<br>
+<div ID=div_ntc>
+▣ 신청하기 : <a href="https://forms.gle/roqnzuwXinJawgx47" target="_blank"> 클릭>>걸을 수 있으면 누구나 할 수 있습니다.<<클릭 </a> <br> 
+▣ 더 알아보기 : <a href="https://blog.naver.com/lovehyp/223446525342" target="_blank"> 네이버 블로그 탱고 명상에 대해서</a> </div>
+<br>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgrptYA0bwOcncz_tMGqiGVehbYBHQelYAcVEOKRlcWY2L36JA3LHBIA22Lv8nLdM0JoVvqX-iyMNNrjnXxk8dQz7g2lnaToUjbJzPifNICTXWgjqh1o7OecOdT_FGb3XRdW_kWq0OEc0bYh8uuQJe9-Ebe0nZ5M3Feir_qR_jE2iHVvuFAFGupJTlUpE/s16000/%EB%AA%85%EC%83%81%ED%83%B1%EA%B3%A0%ED%8F%AC%EC%8A%A4%ED%84%B0-006-1.jpg" alt="탱고 명상을 하면">
+<br>
+<div ID=div_ntc>
+▣ 신청하기 : <a href="https://forms.gle/roqnzuwXinJawgx47" target="_blank"> 클릭>>걸을 수 있으면 누구나 할 수 있습니다.<<클릭 </a> <br> 
+▣ 더 알아보기 : <a href="https://blog.naver.com/lovehyp/223446525342" target="_blank"> 네이버 블로그 탱고 명상에 대해서</a> </div>
+<br>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5MtlQyrLE_fvv9kJqqCOX7UU98Db33inPJ1Ff8cFXKhMC6srpe9u6yMbe9cUrHbR4p7b4cGuXymltPcR1gY24-8W3lrDiblHCtOaUqZ45fwP8S-vSM4uVRgKIFs-GV_cy-994fufhBNM0Ewh96mtizigch_-QjyHTqtqst0ZJzVEL9X16U11zEAqXgpE/s16000/%EB%AA%85%EC%83%81%ED%83%B1%EA%B3%A0%ED%8F%AC%EC%8A%A4%ED%84%B0-003.jpg" alt="탱고 명상 강사 프로필">
+<br>
+<div ID=div_ntc>
+▣ 신청하기 : <a href="https://forms.gle/roqnzuwXinJawgx47" target="_blank"> 클릭>>걸을 수 있으면 누구나 할 수 있습니다.<<클릭 </a> <br> 
+▣ 더 알아보기 : <a href="https://blog.naver.com/lovehyp/223446525342" target="_blank"> 네이버 블로그 탱고 명상에 대해서</a> </div>
+<br>
+</body>
+</html>
