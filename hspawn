@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홈스마트 전당포</title>
+  <link rel="stylesheet" href="https://homepawn.iwinv.net/1/css/style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://homepawn.iwinv.net/1/css/animate.css">
+<script src="https://homepawn.iwinv.net/1/js/wow.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="head">
+      <div class="head1 flex">
+      <div class="logo">
+        <a href="/"><img src="https://homepawn.iwinv.net/1/img/logo.png" alt=""></a>
+      </div>
+      <div class="rightbox">
+        <p><a href="tel:010-4868-5205">010-4868-5205</a></p>
+      </div>
+    </div>
+  </div>
+  </header>
+  <section class="sec01">
+      <div class="main" id="main1">
+        <img src="https://homepawn.iwinv.net/1/img/sec01img1.png" alt="">
+      </div>
+      <div class="main">
+        <img src="https://homepawn.iwinv.net/1/img/sec01img2.png" alt="">
+      </div>
+      <div class="main">
+        <img src="https://homepawn.iwinv.net/1/img/sec01img3.png" alt="">
+      </div>
+  </section>
+  <section class="sec02">
+    <div class="main inner">
+      <div class="title">
+          <h1>대출금액 바로확인</h1>
+          <p>스마트폰으로 담보품목을 촬영하여 보내주시면<br>
+          바로 대출금액을 확인하실 수 있습니다.</p>
+          <div class="buttonset flex">
+            <div class="button">
+              <a href="tel:010-4868-5205">대출 바로하기</a>
+            </div>
+            <div class="button2">
+              <a href="https://open.kakao.com/o/ssEvv1Cg" target="_blank">카톡 대화하기</a>
+            </div>
+          </div>
+     
+      </div>
+
+      <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://homepawn.iwinv.net/1/img/sec02img1.png" alt=""></div>
+      <div class="swiper-slide"><img src="https://homepawn.iwinv.net/1/img/sec02img2.png" alt=""></div>
+      <div class="swiper-slide"><img src="https://homepawn.iwinv.net/1/img/sec02img3.png" alt=""></div>
+      <div class="swiper-slide"><img src="https://homepawn.iwinv.net/1/img/sec02img4.png" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+    </div>
+  </section>
+  <section class="sec03">
+    <div class="inner">
+      <div class="title">
+        <h2>가장 많은 파트너사</h2>
+      </div>
+      <div class="main flex">
+        <div class="left">
+          <p>홈스마트 전당포는<br>
+            고객님의 편의를 위해<br>
+            전국에 가장 많은 파트너사가 있습니다.<br><br>
+            
+            이유가 무엇일까요?<br>
+            바로 고객님들과 파트너들의 홈스마트 전당포에 대한<br> 
+            신뢰가 밑바탕이 되었기에 가능했을 결과 입니다.<br><br>
+            
+            홈스마트 전당포는 더 정직하고 친절하게<br>
+            고객님들께 더 가까이 다가갈 것 입니다.</p>
+        </div>
+        <div class="right">
+          <div class="service-inc-wrap">
+           <div class="map">
+
+            <div class="marker marker1 wow bounceInDown" data-wow-iteration="1" data-wow-delay="1s">
+                  <div class='pin'></div>
+                  <div class='pulse'></div>
+              </div><!--/.marker-->
+  
+              <div class="marker marker2 wow bounceInDown" data-wow-iteration="1" data-wow-delay="2s">
+                  <div class='pin'></div>
+                  <div class='pulse'></div>
+              </div><!--/.marker-->
+  
+              <div class="marker marker3 wow bounceInDown" data-wow-iteration="1" data-wow-delay="3s">
+                  <div class='pin'></div>
+                  <div class='pulse'></div>
+              </div><!--/.marker-->
+  
+              <div class="marker marker4 wow bounceInDown" data-wow-iteration="1" data-wow-delay="4s">
+                  <div class='pin'></div>
+                  <div class='pulse'></div>
+              </div><!--/.marker-->
+  
+              <div class="marker marker5 wow bounceInDown" data-wow-iteration="1" data-wow-delay="5s">
+                  <div class='pin'></div>
+                  <div class='pulse'></div>
+              </div><!--/.marker-->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script>
+      wow = new WOW(
+        {
+          mobile: false
+        }
+      ).init();
+    </script>
+  </section>
+  <section class="sec04">
+    <div class="inner">
+      <div class="title">
+        <h1>대출, 즉시 매입 가능<span> 물품 안내</span></h1>
+        <p>홈스마트 전당포의 취급 품목에는 <span class="mobilebr">제한이 없습니다.</span><br>고객님의 모든 동산으로 <span class="mobilebr">대출을 받으실 수 있으며,</span><br>맡겨주신 소중한 물건을 완벽하게 보관합니다.</p>
+      </div>
+      <div class="main flex">
+        <div class="imgset">
+          <img src="https://homepawn.iwinv.net/1/img/sec04img1.png" alt="">
+          <p>고가시계, 중고 명품 가방, 쥬얼리 등<br>
+          모든 명품 브랜드 대출, 매입 가능</p>
+        </div>
+        <div class="imgset">
+          <img src="https://homepawn.iwinv.net/1/img/sec04img2.png" alt="">
+          <p>순금, 18K, 14K, 다이아몬드 등<br>
+            가치가 있는 모든 귀금속</p>
+        </div>
+        <div class="imgset">
+          <img src="https://homepawn.iwinv.net/1/img/sec04img3.png" alt="">
+          <p>카메라, 노트북, 태블릿, 스마트폰<br>스피커 등 모든 고급 전자기기<br>
+            B2B 사업자 재고 담보대출</p>
+        </div>
+        <div class="imgset">
+          <img src="https://homepawn.iwinv.net/1/img/sec04img4.png" alt="">
+          <p>가치가 높은 모든 악기</p>
+        </div>
+        <div class="imgset">
+          <img src="https://homepawn.iwinv.net/1/img/sec04img5.png" alt="">
+          <p>그 외 가치가 있는 모든 동산<br>자동차, 바이크<br>고가 위스키, 미술품 등</p>
+        </div>
+        <div class="imgset">
+          <img src="https://homepawn.iwinv.net/1/img/sec04img6.png" alt="">
+          <p>고가 매입 / 즉시 현금 지급<br>대출 보다 높은 매입가<br>대출 이용 중 매입 전환 요청 가능</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sec05">
+    <div class="inner">
+      <div class="title">
+        <h1>고객센터</h1>
+        <p>홈스마트 전당포는 항상 열려 있습니다.<br>
+        고객님의 의견을 듣겠습니다.<br>
+      홈스마트 전당포 파트너사 이용 시에 불편/불만 사항들을 알려주시면<br>
+    적극적인 개선 및 반영을 하겠습니다.</p>
+    <h2>대표번호 : <a href="tel:010-4868-5205">010-4868-5205</a></h2>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="foot">
+      <div class="inner">
+        <h2>상호명 : 주식회사 고려사대부 | 대표 : 이용준<br>
+          사업자등록번호 : 183-86-01991 <br>
+        주소 : 경기도 안양시 동안구 홍안대로 519, <span class="mobilebr">6층 이에스601-9호</span></h2>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
